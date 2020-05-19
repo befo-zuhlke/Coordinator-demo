@@ -14,4 +14,6 @@ The Gist of the coordinator pattern is to allow you to use Storyboards without t
 
 Your coordinator's handle all navigation logic and also inject dependencies into the view's they have domain over.
 
+Another good resource for understanding and implementing this pattern yourself [is here](https://www.hackingwithswift.com/articles/71/how-to-use-the-coordinator-pattern-in-ios-apps)
+
 
