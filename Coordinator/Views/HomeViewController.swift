@@ -10,7 +10,7 @@ import UIKit
 
 class HomeViewController: UIViewController, Storyboarded, Coordinatable {
     typealias Coordinator = Coordinating
-    var coordinator: Coordinator?
+    weak var coordinator: Coordinator?
     var activationCode: String?
     
     @IBOutlet weak var codeLabel: UILabel!

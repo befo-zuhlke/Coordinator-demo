@@ -10,7 +10,7 @@ import UIKit
 
 class OnboardingLandingViewController: UIViewController, Storyboarded, Coordinatable {
     typealias Coordinator = OnboardingCoordinator
-    var coordinator: OnboardingCoordinator?
+    weak var coordinator: OnboardingCoordinator?
     
     @IBAction func onNextTapped(_ sender: Any) {
         coordinator?.navigate(from: self)

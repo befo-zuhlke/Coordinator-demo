@@ -10,7 +10,8 @@ import UIKit
 
 class OnboardingActivationCodeViewController: UIViewController, Storyboarded, Coordinatable {
     typealias Coordinator = OnboardingCoordinator
-    var coordinator: OnboardingCoordinator?
+    weak var coordinator: OnboardingCoordinator?
+    
     @IBOutlet weak var activationCodeTextField: UITextField!
     
     @IBAction func onGoTapped(_ sender: Any) {
