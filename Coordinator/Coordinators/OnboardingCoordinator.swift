@@ -23,22 +23,23 @@ class OnboardingCoordinator: Coordinating {
         navigationController.navigationBar.topItem?.title = "Onboarding"
     }
     
-    func goToInfoPage() {
-        let vc = OnboardingInformationViewController.instantiate(name: "Onboarding")
-        vc.coordinator = self
-        navigationController.pushViewController(vc, animated: true)
-    }
-    
-    func goToCodePage() {
-        let vc = OnboardingActivationCodeViewController.instantiate(name: "Onboarding")
-        vc.coordinator = self
-        navigationController.pushViewController(vc, animated: true)
-    }
-    
-    func goToHome(code: String) {
-        let vc = HomeViewController.instantiate()
-        vc.coordinator = self
-        vc.activationCode = code
-        navigationController.setViewControllers([vc], animated: true)
+    func navigate(from: UIViewController, payload: [String: Any]? = [:]) {
+        if let _ = from as? OnboardingLandingViewController {
+            let vc = OnboardingInformationViewController.instantiate(name: "Onboarding")
+            vc.coordinator = self
+            navigationController.pushViewController(vc, animated: true)
+        } else if let _ = from as? OnboardingInformationViewController {
+            let vc = OnboardingActivationCodeViewController.instantiate(name: "Onboarding")
+            vc.coordinator = self
+            navigationController.pushViewController(vc, animated: true)
+        } else if let _ = from as? OnboardingActivationCodeViewController {
+            let vc = HomeViewController.instantiate()
+            
+            vc.coordinator = self
+            vc.activationCode = payload?["code"] as? String
+            navigationController.setViewControllers([vc], animated: true)
+        } else {
+            assertionFailure("")
+        }
     }
 }

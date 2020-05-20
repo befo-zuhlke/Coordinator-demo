@@ -14,6 +14,7 @@ protocol Coordinating: AnyObject {
     
     func start()
     func remove(_ coordinator: Coordinating)
+    func navigate(from: UIViewController, payload: [String: Any]?)
 }
 
 extension Coordinating {

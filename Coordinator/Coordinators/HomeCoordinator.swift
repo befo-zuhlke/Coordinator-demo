@@ -27,4 +27,7 @@ class HomeCoordinator: Coordinating {
         navigationController.navigationBar.topItem?.title = "Home"
     }
     
+    func navigate(from: UIViewController, payload: [String : Any]?) {
+        
+    }
 }

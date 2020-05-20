@@ -15,7 +15,7 @@ class OnboardingActivationCodeViewController: UIViewController, Storyboarded, Co
     
     @IBAction func onGoTapped(_ sender: Any) {
         UserDefaults.standard.set(activationCodeTextField.text, forKey: "activation code")
-        coordinator?.goToHome(code: activationCodeTextField.text ?? "Wrong code")
+        coordinator?.navigate(from: self, payload: ["code": activationCodeTextField.text ?? "Wrong code"])
     }
 }
 

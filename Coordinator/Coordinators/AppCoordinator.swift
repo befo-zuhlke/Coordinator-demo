@@ -29,4 +29,8 @@ class AppCoordinator: Coordinating {
         home.start()
         
     }
+    
+    func navigate(from: UIViewController, payload: [String : Any]?) {
+        
+    }
 }

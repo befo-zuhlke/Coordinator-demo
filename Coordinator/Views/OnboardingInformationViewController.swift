@@ -13,7 +13,7 @@ class OnboardingInformationViewController: UIViewController, Storyboarded, Coord
     var coordinator: OnboardingCoordinator?
     
     @IBAction func onNextTapped(_ sender: Any) {
-        coordinator?.goToCodePage()
+        coordinator?.navigate(from: self)
     }
 }
 
